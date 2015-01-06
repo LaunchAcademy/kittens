@@ -2,6 +2,6 @@
 
 <ul>
   <% @kittens.each do |kitten| %>
-    <li><%= kitten.name %></li>
+    <li><%= kitten.name %>: <%= image_tag(kitten.image.url, alt: kitten.name) %></li>
   <% end %>
 </ul>

@@ -1,6 +1,9 @@
 FactoryGirl.define do
   factory :kitten do
     sequence(:name) { |n| "Kitten #{n}" }
-    image_url "http://hd.wallpaperswide.com/thumbs/kittens-t2.jpg"
+    image do
+      Rack::Test::UploadedFile.new(
+        Rails.root.join("spec/data/two-face-kitten.jpg"))
+    end
   end
 end
